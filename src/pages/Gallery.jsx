@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Gallery.css";
 
 import wedding from "../assets/img2.jpg";
-import wedding2 from "../assets/img1.jpeg";
+import wedding2 from "../assets/img1.jpg";
 import couple from "../assets/img3.jpg";
 import portrait from "../assets/img4.jpg";
 import candid from "../assets/img5.jpg";
@@ -10,7 +10,7 @@ import candid from "../assets/img5.jpg";
 export default function Gallery() {
   const items = [
      {
-      title: "Baby Shower",
+      title: "Maternity Photography",
       category: "Celebrations",
       img: wedding2
     },

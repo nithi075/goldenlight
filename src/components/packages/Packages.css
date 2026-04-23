@@ -1,205 +1,196 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap');
+
+/* --- Root Variables for easy changes --- */
+:root {
+  --gold: #D4AF37;
+  --gold-dark: #B8860B;
+  --bg-dark: #0A0A0A;
+  --card-bg: #141414;
+  --text-light: #F5F5F5;
+  --text-muted: #A3A3A3;
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
 /* ================= PACKAGES SECTION ================= */
 .packages {
-  padding: 80px 20px;
-  background: #fcfaf7;
+  padding: clamp(60px, 10vw, 120px) 20px;
+  background: var(--bg-dark);
   text-align: center;
-  overflow: hidden;
+  color: var(--text-light);
 }
 
-/* small top text */
+.packages-header {
+  margin-bottom: 60px;
+}
+
 .packages-header p {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.65rem;
-  letter-spacing: 3px;
-  color: #b08d57;
+  font-size: 0.75rem;
+  letter-spacing: 5px;
+  color: var(--gold);
   text-transform: uppercase;
   margin-bottom: 15px;
+  font-weight: 500;
 }
 
-/* main heading */
 .packages-header h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 400;
-  color: #111;
-  letter-spacing: 2px;
-  margin-bottom: 50px;
+  letter-spacing: 1px;
 }
 
 /* ================= GRID ================= */
 .packages-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+  perspective: 1000px;
 }
 
 /* ================= CARD ================= */
 .package-card {
-  background: white;
-  padding: 40px 25px;
-  border: 1px solid #eee5d8;
-  transition: 0.4s ease;
+  background: var(--card-bg);
+  padding: 50px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition);
   position: relative;
-  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 4px; /* Slight rounding for modern look */
 }
 
+/* Hover Effect: Elevation & Glow */
 .package-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transform: translateY(-15px);
+  border-color: var(--gold);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.1);
 }
 
-/* featured card */
+/* Featured Badge Style */
 .package-card.featured {
-  background: #f4f1ea;
-  border: 1px solid #b08d57;
+  border: 1px solid var(--gold);
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
 }
 
-/* badge */
 .badge {
   position: absolute;
-  top: -12px;
+  top: 0;
   left: 50%;
-  transform: translateX(-50%);
-  background: #b08d57;
-  color: white;
-  padding: 6px 16px;
-  font-size: 0.6rem;
+  transform: translate(-50%, -50%);
+  background: var(--gold);
+  color: #000;
+  padding: 8px 20px;
+  font-size: 0.65rem;
+  font-weight: 600;
   letter-spacing: 2px;
   font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%); /* Ribbon Shape */
 }
 
-/* package title */
+/* Typography Inside Card */
 .package-card h3 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
-  font-weight: 400;
-  color: #111;
-  margin-bottom: 10px;
+  font-size: 2.2rem;
+  margin-bottom: 5px;
 }
 
-/* subtitle */
 .subtitle {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.7rem;
-  color: #777;
+  font-size: 0.75rem;
+  color: var(--gold);
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  opacity: 0.8;
 }
 
-/* ================= PRICE ================= */
 .package-card h1 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 3rem;
-  font-weight: 400;
-  color: #b08d57;
+  font-size: 3.5rem;
+  color: var(--text-light);
+  margin-bottom: 5px;
 }
 
 .package-card h1 span {
   font-size: 1rem;
-  color: #777;
-}
-
-.event-text {
+  color: var(--text-muted);
   font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
-  color: #666;
-  margin-bottom: 25px;
 }
 
 /* ================= FEATURES ================= */
 .features {
   text-align: left;
-  border-top: 1px solid #eee;
-  padding-top: 20px;
-  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+  margin: 30px 0;
 }
 
 .features p {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
-  color: #666;
-  margin: 12px 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
 }
 
 .features p::before {
-  content: "✦ ";
-  color: #b08d57;
+  content: "✧";
+  color: var(--gold);
+  margin-right: 12px;
+  font-size: 1rem;
 }
 
 /* ================= BUTTON ================= */
 .package-btn {
-  margin-top: 25px;
-  background: #c5a059;
-  color: white;
-  border: none;
-  padding: 10px 22px;
-  font-size: 0.6rem;
-  letter-spacing: 2px;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 14px 28px;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: var(--transition);
+  width: 100%;
+  margin-top: auto;
 }
 
 .package-btn:hover {
-  background: #b08d57;
+  background: var(--gold);
+  color: #000;
+  letter-spacing: 4px;
 }
 
-/* ================= TABLET ================= */
-@media (max-width: 991px) {
-  .packages-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+/* ================= RESPONSIVENESS ================= */
 
-/* ================= MOBILE ================= */
+/* Horizontal scroll for mobile only if cards are many */
 @media (max-width: 768px) {
-  .packages {
-    padding: 50px 15px;
-  }
-
-  .packages-header h2 {
-    font-size: 2rem;
-  }
-
   .packages-container {
     display: flex;
     overflow-x: auto;
+    padding-bottom: 30px;
+    scroll-snap-type: x mandatory;
     gap: 20px;
-    scrollbar-width: none;
   }
 
+  .package-card {
+    min-width: 85vw;
+    scroll-snap-align: center;
+  }
+  
   .packages-container::-webkit-scrollbar {
-    display: none;
+    height: 3px;
   }
-
-  .package-card {
-    min-width: 280px;
-    min-height: auto;
-    flex: 0 0 auto;
-  }
-
-  .package-card h3 {
-    font-size: 1.5rem;
-  }
-
-  .package-card h1 {
-    font-size: 2.2rem;
-  }
-}
-
-/* small mobile */
-@media (max-width: 480px) {
-  .packages-header h2 {
-    font-size: 1.7rem;
-  }
-
-  .package-card {
-    min-width: 250px;
+  
+  .packages-container::-webkit-scrollbar-thumb {
+    background: var(--gold);
   }
 }

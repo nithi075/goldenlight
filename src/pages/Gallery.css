@@ -3,7 +3,7 @@
 /* ================= SECTION ================= */
 .portfolio {
   padding: 80px 20px;
-  background: #fcfaf7;
+  background: #0D0D0D;
   text-align: center;
   overflow: hidden;
 }
@@ -13,7 +13,7 @@
   font-family: "Montserrat", sans-serif;
   font-size: 0.65rem;
   letter-spacing: 3px;
-  color: #b08d57;
+  color: #F5C542;
   text-transform: uppercase;
   margin-bottom: 15px;
   display: block;
@@ -26,7 +26,7 @@
   font-weight: 400;
   margin-bottom: 60px;
   letter-spacing: 2px;
-  color: #111;
+  color: #F5F5F5;
 }
 
 /* ================= SLIDER ================= */
@@ -47,12 +47,16 @@
   transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   filter: grayscale(20%);
   opacity: 0.6;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #2B2B2B;
 }
 
 .portfolio-card.active {
   opacity: 1;
   filter: grayscale(0);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 40px rgba(212,175,55,0.18);
+  transform: scale(1.05);
 }
 
 /* image */
@@ -71,7 +75,7 @@
   padding: 35px 25px;
   background: linear-gradient(
     transparent,
-    rgba(0,0,0,0.75)
+    rgba(0,0,0,0.85)
   );
   color: white;
   text-align: left;
@@ -89,7 +93,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 8px;
-  color: #d8c7a3;
+  color: #F5C542;
 }
 
 .overlay h3 {
@@ -97,14 +101,16 @@
   font-size: 1.6rem;
   font-weight: 400;
   margin-bottom: 12px;
+  color: #ffffff;
 }
 
 .view-link {
   font-family: "Montserrat", sans-serif;
   font-size: 0.65rem;
   letter-spacing: 2px;
-  border-bottom: 1px solid rgba(255,255,255,0.4);
+  border-bottom: 1px solid rgba(245,197,66,0.5);
   padding-bottom: 4px;
+  color: #F5C542;
 }
 
 /* ================= PAGINATION ================= */
@@ -119,13 +125,13 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #d1d1d1;
+  background: #444;
   cursor: pointer;
   transition: 0.4s;
 }
 
 .dot.active {
-  background: #b08d57;
+  background: #D4AF37;
   transform: scale(1.5);
 }
 
@@ -157,7 +163,7 @@
   }
 
   .portfolio-card.active {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(212,175,55,0.2);
   }
 
   /* overlay always visible on mobile */
@@ -166,7 +172,7 @@
     padding: 18px 15px;
     background: linear-gradient(
       transparent,
-      rgba(0,0,0,0.75)
+      rgba(0,0,0,0.85)
     );
   }
 

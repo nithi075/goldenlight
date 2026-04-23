@@ -1,168 +1,150 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@300;400&display=swap');
-
-/* section */
+/* ================= ABOUT SECTION ================= */
 .about {
-  background: #f4f1ea;
-  padding: 50px 20px;
+  background: #0D0D0D;
+  padding: 80px 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 60px;
+  overflow: hidden;
+}
+
+/* Text Content Area */
+.about-content {
+  max-width: 500px;
   text-align: center;
-  gap: 40px;
 }
 
-/* text area */
-.about h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  letter-spacing: 2px;
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-}
-
-/* paragraph */
-.about p {
-  font-family: Montserrat;
+.about-content .sub-text {
+  font-family: var(--font-body);
   font-size: 0.75rem;
-  color: #666;
-  max-width: 320px;
-  margin: auto;
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.about-content h2 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.about-content p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-muted);
   line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 35px;
 }
 
-/* button */
-.about button {
-  margin-top: 18px;
-  background: #c5a059;
-  color: white;
-  border: none;
-  padding: 10px 22px;
-  font-size: 0.6rem;
+/* Premium Button Style */
+.about-btn {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 14px 35px;
+  font-size: 0.75rem;
+  font-family: var(--font-body);
   letter-spacing: 2px;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
 }
 
-/* ---------------- IMAGE SECTION ---------------- */
+.about-btn:hover {
+  background: var(--gold);
+  color: black;
+  transform: translateY(-3px);
+}
+
+/* ---------------- IMAGE LAYOUT ---------------- */
 
 .about-images {
   position: relative;
   width: 100%;
-  max-width: 380px;
-  height: 500px;
+  max-width: 500px;
+  height: auto;
+  display: flex;
+  justify-content: center;
 }
 
-/* main top image */
+.main-img-wrapper {
+  width: 85%;
+  position: relative;
+  overflow: hidden;
+}
+
 .main-img {
   width: 100%;
-  height: 360px;
+  height: 500px;
   object-fit: cover;
-  display: block;
+  filter: grayscale(20%);
+  transition: 0.6s ease;
 }
 
-/* small overlapping image */
+.main-img-wrapper:hover .main-img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
 .small-img {
   position: absolute;
-  bottom: 40px;   /* overlap on main image */
-  right: 0;
-  width: 220px;
-  height: 140px;
+  bottom: -30px;
+  left: -20px;
+  width: 200px;
+  height: 250px;
   object-fit: cover;
-  border: 5px solid #f4f1ea;
+  border: 10px solid #0D0D0D;
+  box-shadow: 20px 20px 40px rgba(0,0,0,0.5);
+  z-index: 2;
 }
 
-/* experience badge */
-.experience-box {
+/* Minimal Experience Badge */
+.experience-badge {
   position: absolute;
-  top: 20px;
-  right: 0;
-  width: 110px;
-  height: 110px;
-  background: #c5a059;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* badge number */
-.experience-box h3 {
-  font-size: 2rem;
-  margin: 0;
-  font-weight: bold;
-}
-
-/* badge text */
-.experience-box p {
-  font-size: 0.65rem;
+  top: 40px;
+  right: -10px;
+  background: var(--gold);
+  padding: 20px;
   text-align: center;
-  margin: 0;
-  line-height: 1.4;
+  z-index: 3;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.3);
+}
+
+.experience-badge h3 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
   color: black;
+  line-height: 1;
 }
 
-/* ---------------- TABLET ---------------- */
-
-@media (min-width: 768px) {
-  .about {
-    flex-direction: row;
-    text-align: left;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-  }
-
-  .about div {
-    max-width: 400px;
-  }
-
-  .about p {
-    margin: 0;
-  }
-
-  .about-images {
-    max-width: 450px;
-    height: 550px;
-  }
-
-  .main-img {
-    height: 400px;
-  }
-
-  .small-img {
-    width: 250px;
-    height: 160px;
-    bottom: 50px;
-  }
+.experience-badge p {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: black;
+  letter-spacing: 1px;
+  margin-top: 5px;
 }
 
-/* ---------------- DESKTOP ---------------- */
+/* ---------------- RESPONSIVE ---------------- */
 
 @media (min-width: 1024px) {
   .about {
-    padding: 80px 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 120px 10%;
+    text-align: left;
   }
 
-  .about h2 {
-    font-size: 2rem;
-  }
-
-  .about p {
-    font-size: 0.9rem;
-  }
-
-  .about-images {
-    max-width: 500px;
-    height: 600px;
-  }
-
-  .main-img {
-    height: 450px;
-  }
-
-  .small-img {
-    width: 280px;
-    height: 180px;
-    bottom: 60px;
+  .about-content {
+    text-align: left;
   }
 }

@@ -1,55 +1,48 @@
 import "./Footer.css";
+import { FaInstagram, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
 export default function Footer() {
-
-  const handleInstagramClick = () => {
-    window.open(
-      "https://www.instagram.com/theweddingcraft.in/",
-      "_blank"
-    );
-  };
-
-  const handleContactClick = () => {
-    window.open(
-      "https://wa.me/917092263880",
-      "_blank"
-    );
-  };
+  
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer">
-
-      <div className="footer-curve">
-
-        <div className="footer-content">
-
-          {/* logo */}
-          <div className="footer-logo">
-            The Wedding Craft
-          </div>
-
-          {/* buttons */}
-          <div className="footer-buttons">
-
-            <button onClick={handleInstagramClick}>
-              INSTAGRAM
-            </button>
-
-            <button onClick={handleContactClick}>
-              CONTACT
-            </button>
-
-          </div>
-
-          {/* copyright */}
-          <p className="copyright">
-            © 2026 The Wedding Craft Photography
-          </p>
-
+    <footer className="footer-section">
+      <div className="footer-container">
+        
+        {/* Top Section: Brand Statement */}
+        <div className="footer-top">
+          <h1 className="footer-logo">Jeeva Photography</h1>
+          <p className="footer-slogan">Capturing timeless stories with elegance.</p>
         </div>
 
-      </div>
+        {/* Middle Section: Links & Socials */}
+        <div className="footer-middle">
+          <div className="footer-social-links">
+            <a href="https://www.instagram.com/__jeeva_photography__/" target="_blank" rel="noreferrer">
+              <FaInstagram /> Instagram
+            </a>
+            <a href="https://wa.me/91709226986" target="_blank" rel="noreferrer">
+              <FaWhatsapp /> WhatsApp
+            </a>
+            <a href="mailto:hello@jeevaphotography.com">
+              <FaEnvelope /> Email
+            </a>
+          </div>
+        </div>
 
+        {/* Bottom Section: Copyright */}
+        <div className="footer-bottom">
+          <div className="footer-line"></div>
+          <div className="footer-copyright">
+            <p>© {currentYear} Jeeva Photography. Crafted with Love.</p>
+            <div className="footer-legal">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms & Conditions</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
     </footer>
   );
 }

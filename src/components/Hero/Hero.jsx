@@ -10,103 +10,55 @@ import hero3 from "../../assets/hero3.jpg";
 
 export default function Hero() {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const heroImages = [hero1, hero2, hero3];
   const [currentImage, setCurrentImage] = useState(0);
+  const heroImages = [hero1, hero2, hero3];
 
-  // auto slide every 5 sec
+  // Smooth slide transition
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) =>
         prev === heroImages.length - 1 ? 0 : prev + 1
       );
-    }, 5000);
+    }, 7000); // 7 seconds for a relaxed cinematic feel
 
     return () => clearInterval(interval);
-  }, []);
+  }, [heroImages.length]);
 
-  // scroll to gallery section
-  const handlePortfolioClick = () => {
-    const gallerySection = document.getElementById("gallery");
-
-    if (gallerySection) {
-      gallerySection.scrollIntoView({
-        behavior: "smooth"
-      });
+  const scrollToSection = (id) => {
+    setMenuOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  // open whatsapp
   const handleWhatsAppClick = () => {
-    window.open(
-      "https://wa.me/917092263880",
-      "_blank"
-    );
+    window.open("https://wa.me/917092263880", "_blank");
   };
 
   return (
     <section className="hero" id="home">
-
-      {/* Navbar */}
+      {/* Navbar - Original logic with premium CSS */}
       <nav className="navbar">
-
         <div className="logo">
-          <img src={logoimg} alt="logo" />
-        </div>
-
-        <div className="brand-title">
-          The Wedding Craft
+          <img src={logoimg} alt="Jeeva Photography Logo" />
         </div>
 
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-          <li>
-            <a href="#home" onClick={() => setMenuOpen(false)}>
-              Home
-            </a>
-          </li>
-
-          <li>
-            <a href="#gallery" onClick={() => setMenuOpen(false)}>
-              Portfolio
-            </a>
-          </li>
-
-          <li>
-            <a href="#services" onClick={() => setMenuOpen(false)}>
-              Services
-            </a>
-          </li>
-
-          <li>
-            <a href="#gallery" onClick={() => setMenuOpen(false)}>
-              Gallery
-            </a>
-          </li>
-
-          <li>
-            <a href="#testimonials" onClick={() => setMenuOpen(false)}>
-              Testimonials
-            </a>
-          </li>
-
-          <li>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>
-              Contact
-            </a>
-          </li>
+          <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
+          <li><a href="#gallery" onClick={() => setMenuOpen(false)}>Portfolio</a></li>
+          <li><a href="#services" onClick={() => setMenuOpen(false)}>Services</a></li>
+          <li><a href="#testimonials" onClick={() => setMenuOpen(false)}>Testimonials</a></li>
+          <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
         </ul>
 
-        <button className="nav-btn desktop-btn">
+        <button className="nav-btn desktop-btn" onClick={() => scrollToSection("contact")}>
           Check Availability
         </button>
 
-        <div
-          className="menu-icon"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
+        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </div>
-
       </nav>
 
       {/* Hero Background Slider */}
@@ -115,55 +67,36 @@ export default function Hero() {
           <img
             key={index}
             src={img}
-            alt={`hero-${index}`}
-            className={
-              index === currentImage
-                ? "active-slide"
-                : ""
-            }
+            alt={`Wedding cinematic frame ${index}`}
+            className={index === currentImage ? "active-slide" : ""}
           />
         ))}
       </div>
 
-      {/* Hero Content */}
+      {/* Hero Content - New Luxury Text */}
       <div className="hero-overlay">
-
-        <span className="sub-title">
-          Luxury Wedding Photography
-        </span>
+        <span className="sub-title">The Art of Visual Storytelling</span>
 
         <h1>
-          Capturing Love,
+          Preserving Your 
           <br />
-          One Frame at a Time
+          Golden Moments
         </h1>
 
         <p>
-          From intimate moments to grand celebrations,
-          we preserve every emotion beautifully so your
-          memories last forever.
+          Specializing in luxury wedding cinematography and candid frames. 
+          We don't just document events; we capture the authentic soul 
+          of your celebration with timeless elegance.
         </p>
 
         <div className="hero-btns">
-
-          {/* Scroll to Gallery */}
-          <button
-            className="hero-btn"
-            onClick={handlePortfolioClick}
-          >
-            View Portfolio
+          <button className="hero-btn" onClick={() => scrollToSection("gallery")}>
+            Explore Portfolio
           </button>
-
-          {/* Open WhatsApp */}
-          <button
-            className="hero-btn-outline"
-            onClick={handleWhatsAppClick}
-          >
-            Book Consultation
+          <button className="hero-btn-outline" onClick={handleWhatsAppClick}>
+            Book a Consultation
           </button>
-
         </div>
-
       </div>
     </section>
   );

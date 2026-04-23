@@ -28,7 +28,7 @@ export default function Featured() {
 
   const handleInstagramRedirect = () => {
     window.open(
-      "https://www.instagram.com/theweddingcraft.in/",
+      "https://www.instagram.com/__jeeva_photography__/",
       "_blank"
     );
   };

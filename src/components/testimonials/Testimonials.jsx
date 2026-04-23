@@ -1,5 +1,5 @@
 import "./Testimonials.css"
-import testimonialImg from "../../assets/testimonial.png"
+import testimonialImg from "../../assets/testimonial.jpg"
 
 export default function Testimonials() {
   return (
@@ -23,7 +23,7 @@ export default function Testimonials() {
         <div className="testimonial-overlay">
 
           <h3>
-            Iszmail & Susisumaiya
+        Asha & Natraj
           </h3>
 
           <p>

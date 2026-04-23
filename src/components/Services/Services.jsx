@@ -1,35 +1,34 @@
-import "./Services.css"
+import "./Services.css";
 
-export default function Services(){
+export default function Services() {
+  const services = [
+    {
+      title: "Wedding Story",
+      desc: "Cinematic & Candid Coverage",
+    },
+    {
+      title: "Editorial",
+      desc: "Fashion & Lifestyle Portraits",
+    },
+    {
+      title: "Commercial",
+      desc: "Brand Identity & Visuals",
+    }
+  ];
+
   return (
-    <section className="services">
+    <section className="services" id="services">
       <div className="services-container">
-        
-        <div className="service-item">
-          <span className="service-icon">✦</span>
-          <div className="service-text">
-            <h4>BRAND</h4>
-            <p>Elegant identity photography</p>
+        {services.map((item, index) => (
+          <div className="service-item" key={index}>
+            <span className="service-icon">0{index + 1} —</span>
+            <div className="service-text">
+              <h4>{item.title}</h4>
+              <p>{item.desc}</p>
+            </div>
           </div>
-        </div>
-
-        <div className="service-item">
-          <span className="service-icon">✦</span>
-          <div className="service-text">
-            <h4>WEDDING</h4>
-            <p>Luxury wedding coverage</p>
-          </div>
-        </div>
-
-        <div className="service-item">
-          <span className="service-icon">✦</span>
-          <div className="service-text">
-            <h4>EDITORIAL</h4>
-            <p>Magazine style shoots</p>
-          </div>
-        </div>
-
+        ))}
       </div>
     </section>
-  )
+  );
 }
