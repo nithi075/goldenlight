@@ -1,52 +1,69 @@
 .insta-compact-section {
-  padding: 80px 20px;
+  padding: 70px 20px;
   background: #0D0D0D;
   text-align: center;
+  overflow: hidden;
 }
 
+/* Header */
 .insta-header-minimal {
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
 .insta-mini-tag {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.65rem;
-  letter-spacing: 4px;
+  font-size: 12px;
+  letter-spacing: 3px;
   color: #D4AF37;
   display: block;
   margin-bottom: 10px;
 }
 
 .insta-header-minimal h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
-  color: #F5F5F5;
-  font-weight: 400;
+  font-size: 32px;
+  color: white;
 }
 
-/* --- Grid control --- */
+/* Wrapper */
 .insta-wrapper-small {
-  max-width: 650px; /* 2 cards side-by-side neat-ah irukka */
-  margin: 0 auto;
-}
-
-.insta-2-col-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-/* --- Card Look --- */
-.insta-card-box {
-  background: #FFFFFF; /* Pure white card for contrast */
-  border-radius: 8px;
+  width: 100%;
   overflow: hidden;
-  padding-bottom: 10px;
 }
 
+/* Horizontal Scroll */
+.insta-scroll-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+.insta-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+.insta-card-box {
+  min-width: 220px;
+  max-width: 220px;
+  flex: 0 0 auto;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: 0.3s ease;
+}
+
+.insta-card-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Image */
 .insta-img-frame {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1/1;
   overflow: hidden;
 }
 
@@ -54,59 +71,61 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 0.5s ease;
 }
 
-/* --- Card Hover --- */
 .insta-card-box:hover img {
   transform: scale(1.05);
+  transition: 0.4s ease;
 }
 
-/* --- Instagram Icons Row --- */
+/* Actions */
 .insta-card-actions {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 12px 15px 5px;
+  padding: 12px;
 }
 
 .left-actions {
   display: flex;
-  gap: 15px;
+  gap: 12px;
 }
 
 .insta-icon {
-  font-size: 1.1rem;
-  color: #262626; /* Dark gray like Insta */
+  font-size: 18px;
+  color: #222;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .insta-icon:hover {
   color: #D4AF37;
-  transform: scale(1.1);
 }
 
-/* --- Footer Link --- */
+/* Footer */
 .insta-footer-link {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .insta-footer-link a {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
   color: #D4AF37;
   text-decoration: none;
-  font-style: italic;
-  border-bottom: 1px solid #D4AF37;
+  font-size: 18px;
 }
 
-/* --- Mobile --- */
-@media (max-width: 480px) {
-  .insta-2-col-grid {
-    gap: 12px;
+/* Mobile */
+@media (max-width: 768px) {
+  .insta-card-box {
+    min-width: 180px;
+    max-width: 180px;
   }
-  .insta-card-actions {
-    padding: 8px 10px;
+}
+
+@media (max-width: 480px) {
+  .insta-card-box {
+    min-width: 150px;
+    max-width: 150px;
+  }
+
+  .insta-header-minimal h3 {
+    font-size: 24px;
   }
 }

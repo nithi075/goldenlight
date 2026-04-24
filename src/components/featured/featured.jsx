@@ -28,7 +28,7 @@ export default function Featured() {
 
   const handleInstagramRedirect = () => {
     window.open(
-      "https://www.instagram.com/__jeeva_photography__/",
+      "https://www.instagram.com/goldenlights_photography/",
       "_blank"
     );
   };

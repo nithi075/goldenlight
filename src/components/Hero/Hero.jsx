@@ -41,7 +41,7 @@ export default function Hero() {
       {/* Navbar - Original logic with premium CSS */}
       <nav className="navbar">
         <div className="logo">
-          <img src={logoimg} alt="Jeeva Photography Logo" />
+          <img src={logoimg} alt="Golden Lights Photography Logo" />
         </div>
 
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>

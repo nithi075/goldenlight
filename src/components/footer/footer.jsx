@@ -11,14 +11,14 @@ export default function Footer() {
         
         {/* Top Section: Brand Statement */}
         <div className="footer-top">
-          <h1 className="footer-logo">Jeeva Photography</h1>
+          <h1 className="footer-logo">Golden Lights Photography</h1>
           <p className="footer-slogan">Capturing timeless stories with elegance.</p>
         </div>
 
         {/* Middle Section: Links & Socials */}
         <div className="footer-middle">
           <div className="footer-social-links">
-            <a href="https://www.instagram.com/__jeeva_photography__/" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/goldenlights_photography/" target="_blank" rel="noreferrer">
               <FaInstagram /> Instagram
             </a>
             <a href="https://wa.me/91709226986" target="_blank" rel="noreferrer">
@@ -34,7 +34,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="footer-line"></div>
           <div className="footer-copyright">
-            <p>© {currentYear} Jeeva Photography. Crafted with Love.</p>
+            <p>© {currentYear} Golden Lights Photography. Crafted with Love.</p>
             <div className="footer-legal">
               <a href="#">Privacy Policy</a>
               <a href="#">Terms & Conditions</a>
