@@ -5,7 +5,7 @@ import Packages from "./components/packages/Packages";   // NEW
 
 import Testimonials from "./components/testimonials/Testimonials";
 import Instagram from "./components/instagram/Instagram";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/footer/footer";
 import Gallery from "./pages/Gallery";
 import Location from "./components/location/Location";
 import Featured from "./components/featured/featured";
