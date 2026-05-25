@@ -2,17 +2,6 @@ import "./index.css";
 import Hero from './components/Hero/Hero';
 import StorySection from "./components/StorySection/StorySection";
 import FilmSection from "./components/FilmSection/FlimSection";
-import "./App.css";
-
-import Packages from "./components/packages/Packages";   // NEW
-
-import Testimonials from "./components/testimonials/Testimonials";
-import Instagram from "./components/instagram/Instagram";
-import Footer from "./components/footer/footer";
-import Gallery from "./pages/Gallery";
-import Location from "./components/location/Location";
-import Featured from "./components/featured/featured";
-import Services from "./components/Services/Services"
 import About from "./components/About/About";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Gallery from "./components/Gallery/Gallery";
